@@ -1,5 +1,12 @@
 # Superhero App
 
+## List of contents
+
+- [Steps to push forward](#steps-to-push-forward)
+- [Scripts](#scripts)
+- [Folder structure](#folder-structure)
+- [Run production build in Docker container](#run-production-build-in-docker-container)
+
 ## Steps to push forward
 
 1. Use `create-react-app`, do cleanup, add README ✅
@@ -46,3 +53,19 @@ Runs every test suite using Jest.
 ├── package.json
 └── package.
 ```
+
+## Run production build in Docker container
+
+Build the app image:
+
+```
+docker build -t superhero-app .
+```
+
+Spin it up:
+
+```
+docker run -it --rm -p 80:80 superhero-app
+```
+
+Then access the app in your browser on port 80 (so the address should be `http://localhost/`).
