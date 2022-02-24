@@ -10,7 +10,7 @@
 ## Steps to push forward
 
 1. Use `create-react-app`, do cleanup, add README ✅
-2. Add Dockerfile & Docker Compose file with config for production build
+2. Add Dockerfile file with config for production build ✅
 3. Add `json-server` and apply provided JSON
 4. Setup Husky & linting before commit
 5. Add Error Boundary wrapper
