@@ -10,8 +10,9 @@
 ## Steps to push forward
 
 1. Use `create-react-app`, do cleanup, add README ✅
-2. Add Dockerfile file with config for production build ✅
-3. Add `json-server` and apply provided JSON
+2. Add Dockerfile and docker-compose file with config for production build ✅
+3. Add `json-server` and apply provided JSON ✅
+    - Add `json-server` as a service in `docker-compose.yml` ✅
 4. Setup Husky & linting before commit
 5. Add Error Boundary wrapper
 6. Add React Context for Superheros
@@ -25,6 +26,16 @@
 ### `yarn start`
 
 Starts app in development mode.
+
+❗ Important - you will need an `.env` file created in the root dir of your project. Fill it with following contents:
+
+```
+BACKEND_URL=http://localhost:3001
+```
+
+You also need to have `json-server` running: `yarn json-server`
+
+The application will run at `http://localhost:3000` and the `json-server` will be available at `http://localhost:3001`.
 
 ### `yarn build`
 
@@ -59,13 +70,15 @@ Runs every test suite using Jest.
 Build the app image:
 
 ```
-docker build -t superhero-app .
+docker-compose build
 ```
 
 Spin it up:
 
 ```
-docker run -it --rm -p 80:80 superhero-app
+docker-compose up
 ```
 
 Then access the app in your browser on port 80 (so the address should be `http://localhost/`).
+
+The `json-server` is available at `http://localhost:3000`.
