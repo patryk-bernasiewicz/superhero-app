@@ -4,10 +4,13 @@ import 'reseter.css';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { GlobalErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalErrorBoundary>
+      <App />
+    </GlobalErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
 );

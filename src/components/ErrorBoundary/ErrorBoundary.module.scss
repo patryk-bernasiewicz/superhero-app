@@ -1,0 +1,28 @@
+@import 'src/styles/colors';
+@import 'src/styles/spacing';
+
+.wrapper {
+  width: 100%;
+  min-height: 500px;
+  display: grid;
+  place-items: center;
+}
+
+.boundary {
+  max-width: 960px;
+}
+
+.heading {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: $spacing-3 0;
+}
+
+.details {
+  margin: $spacing-3 0;
+}
+
+.errorMessage {
+  color: $color-alert;
+  margin: $spacing-1 0;
+}
