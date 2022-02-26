@@ -14,11 +14,11 @@
 3. Add `json-server` and apply provided JSON ✅
     - Add `json-server` as a service in `docker-compose.yml` ✅
 4. Setup Husky & linting before commit ✅
-5. Add Error Boundary wrapper
-6. Add SCSS Modules & basic styling
+5. Add SCSS Modules & basic styling
     - add normalize.scss
     - create one global SCSS file
     - create config files that modules will use/import
+6. Add Error Boundary wrapper
 7. Add React Context for Superheros
     - Add basic logic for superhero retrieval from DB
 8. Add basic Layout component & wrap rest of the components with it
