@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { GlobalErrorBoundary } from '../ErrorBoundary/ErrorBoundary';
-import { jestIdsMap } from '../../constants/jestHelpers';
+import { GlobalErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
+import { jestIdsMap } from '@utils/jestHelpers';
 
 test('it renders children when nothing throws', () => {
   const expectedText = 'Lorem ipsum dolor sit.';

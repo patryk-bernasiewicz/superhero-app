@@ -19,7 +19,7 @@
     - create one global SCSS file ✅
     - create config files that modules will use/import ✅
 6. Add Error Boundary wrapper
-7. Add paths for easier/more readable imports
+7. Add paths for easier/more readable imports ✅
 8. Add React Context for Superheros
     - Add basic logic for superhero retrieval from DB
 9. Add basic Layout component & wrap rest of the components with it

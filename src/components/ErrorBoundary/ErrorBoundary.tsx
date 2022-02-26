@@ -1,5 +1,5 @@
 import { Component, ReactNode } from 'react';
-import { jestIdsMap } from '../../constants/jestHelpers';
+import { jestIdsMap } from '@utils/jestHelpers';
 
 import styles from './ErrorBoundary.module.scss';
 

@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import 'reseter.css';
 import './index.scss';
+
 import App from './App';
+import { GlobalErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
+
 import reportWebVitals from './reportWebVitals';
-import { GlobalErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
 
 ReactDOM.render(
   <React.StrictMode>
