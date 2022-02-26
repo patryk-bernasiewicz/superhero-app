@@ -6,9 +6,7 @@ import { jestIdsMap } from '@utils/jestHelpers';
 
 test('it renders children when nothing throws', () => {
   const expectedText = 'Lorem ipsum dolor sit.';
-  const RegularComponent = () => (
-    <div>{expectedText}</div>
-  );
+  const RegularComponent = () => <div>{expectedText}</div>;
 
   render(<RegularComponent />, { wrapper: GlobalErrorBoundary });
   screen.getByText(expectedText);

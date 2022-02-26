@@ -8,7 +8,10 @@ interface GlobalErrorBoundaryState {
   errorMessage?: string;
 }
 
-export class GlobalErrorBoundary extends Component<any, GlobalErrorBoundaryState> {
+export class GlobalErrorBoundary extends Component<
+  any,
+  GlobalErrorBoundaryState
+> {
   state = {
     hasError: false,
     errorMessage: undefined,
@@ -16,7 +19,7 @@ export class GlobalErrorBoundary extends Component<any, GlobalErrorBoundaryState
 
   static getDerivedStateFromError(error: Error) {
     const { message } = error;
-    
+
     return {
       hasError: true,
       errorMessage: message,
@@ -31,20 +34,17 @@ export class GlobalErrorBoundary extends Component<any, GlobalErrorBoundaryState
 
   render(): ReactNode {
     const { children } = this.props;
-    const {
-      hasError,
-      errorMessage,
-    } = this.state;
+    const { hasError, errorMessage } = this.state;
 
     if (hasError) {
       return (
-        <div
-          className={styles.wrapper}
-          data-testid={jestIdsMap.errorBoundary}
-        >
+        <div className={styles.wrapper} data-testid={jestIdsMap.errorBoundary}>
           <div className={styles.boundary}>
             <div className={styles.heading}>Oh no!</div>
-            <p>An error happened somewhere in the app... Please let us know by email!</p>
+            <p>
+              An error happened somewhere in the app... Please let us know by
+              email!
+            </p>
             {errorMessage && (
               <div className={styles.details}>
                 Error Details:
@@ -55,7 +55,6 @@ export class GlobalErrorBoundary extends Component<any, GlobalErrorBoundaryState
         </div>
       );
     }
-
 
     return children;
   }
