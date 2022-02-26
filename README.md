@@ -23,7 +23,7 @@
 8. Add prettier config to React's builtin Eslint ✅
 9. Add React Context for Superheros ✅
     - Add basic logic for superhero retrieval from DB ✅
-10. Add basic Layout component & wrap rest of the components with it
+10. Add basic Layout component & wrap rest of the components with it ✅
 11. Add React Router with base routes within Layout
 12. Create RandomHeroes container component
     - add RandomHeroes component tests
