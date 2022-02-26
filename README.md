@@ -15,15 +15,20 @@
     - Add `json-server` as a service in `docker-compose.yml` ✅
 4. Setup Husky & linting before commit ✅
 5. Add Error Boundary wrapper
-6. Add React Context for Superheros
-7. Add basic Layout component & wrap app with it
-8. Add React Router with base routes within Layout
-9. Create RandomHeroes container component
-  - add RandomHeroes component tests
-10. Create HeroDetails container component
-  - add HeroDetails component tests
-11. Add Cypress
-  - Add E2E tests to Superhero App
+6. Add SCSS Modules & basic styling
+    - add normalize.scss
+    - create one global SCSS file
+    - create config files that modules will use/import
+7. Add React Context for Superheros
+    - Add basic logic for superhero retrieval from DB
+8. Add basic Layout component & wrap rest of the components with it
+9. Add React Router with base routes within Layout
+10. Create RandomHeroes container component
+    - add RandomHeroes component tests
+11. Create HeroDetails container component
+    - add HeroDetails component tests
+12. Setup Cypress
+    - Add E2E tests to Superhero App
 
 ## Scripts
 
@@ -60,18 +65,29 @@ Command that runs automatically after `yarn install`. It prepares Git hooks to r
 ## Folder structure
 
 ```
+├── .husky                      # Husky configuration and hooks
 ├── public                      # React public files
 ├── src
 |   ├── components              # Common components
-|   └── features                # Feature-specific components and containers (eg. pages/modules)
-|       ├── RandomHeroes        # Random Heroes view
-|           ├── components      # Random Heroes-specific components
-|       └── HeroDetails         # Hero Details view
-|           ├── components      # Hero Details-specific components
+|   ├── features                # Feature-specific components and containers (eg. pages/modules)
+|   |   ├── RandomHeroes        # Random Heroes view
+|   |   |   ├── containers      # Random Heroes-specific containers
+|   |   |   └── components      # Random Heroes-specific components
+|   |   └── HeroDetails         # Hero Details view
+|   |       ├── containers      # Random Heroes-specific containers
+|   |       └── components      # Hero Details-specific components
+|   └── context                 # Project Context components
 ├── README.md
+├── db.json
 ├── package.json
-└── package.
+├── tsconfig.json
+├── docker-compose.yml
+└── Dockerfile
 ```
+
+Tests are kept in dedicated `__tests__` directory under every innermost branch of the folder structure.
+
+**Containers** are special type of components that are allowed to trigger logic changes (typically function calls from the app's Context)
 
 ## Run production build in Docker container
 
