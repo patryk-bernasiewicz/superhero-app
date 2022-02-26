@@ -13,13 +13,17 @@
 2. Add Dockerfile and docker-compose file with config for production build ✅
 3. Add `json-server` and apply provided JSON ✅
     - Add `json-server` as a service in `docker-compose.yml` ✅
-4. Setup Husky & linting before commit
+4. Setup Husky & linting before commit ✅
 5. Add Error Boundary wrapper
 6. Add React Context for Superheros
 7. Add basic Layout component & wrap app with it
 8. Add React Router with base routes within Layout
 9. Create RandomHeroes container component
+  - add RandomHeroes component tests
 10. Create HeroDetails container component
+  - add HeroDetails component tests
+11. Add Cypress
+  - Add E2E tests to Superhero App
 
 ## Scripts
 
@@ -48,6 +52,10 @@ Runs Eslint to lint Typescript files.
 ### `yarn test`
 
 Runs every test suite using Jest.
+
+### `yarn prepare`
+
+Command that runs automatically after `yarn install`. It prepares Git hooks to run Husky on every commit.
 
 ## Folder structure
 
