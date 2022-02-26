@@ -1,0 +1,15 @@
+@import 'src/styles/spacing';
+
+.wrapper {
+  min-width: 100%;
+  min-height: 100%;
+  padding: $spacing-0 $spacing-4;
+  display: grid;
+
+}
+
+.content {
+  width: 100%;
+  max-width: 960px;
+  margin: $spacing-5 auto;
+}
