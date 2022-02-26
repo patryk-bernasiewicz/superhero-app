@@ -30,6 +30,12 @@
       "@features/*": [
         "src/features/*"
       ],
+      "@context/*": [
+        "src/context/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ]
     }
   },
   "include": [

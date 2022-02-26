@@ -1,7 +1,9 @@
 import React from 'react';
 
-function App() {
-  return <div>Hello World!</div>;
-}
+import { SuperheroContextProvider } from '@context/SuperheroContext';
+
+const App = () => {
+  return <SuperheroContextProvider>Hello World!</SuperheroContextProvider>;
+};
 
 export default App;

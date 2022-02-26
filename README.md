@@ -70,15 +70,18 @@ Command that runs automatically after `yarn install`. It prepares Git hooks to r
 ├── .husky                      # Husky configuration and hooks
 ├── public                      # React public files
 ├── src
-|   ├── components              # Common components
-|   ├── features                # Feature-specific components and containers (eg. pages/modules)
-|   |   ├── RandomHeroes        # Random Heroes view
-|   |   |   ├── containers      # Random Heroes-specific containers
-|   |   |   └── components      # Random Heroes-specific components
-|   |   └── HeroDetails         # Hero Details view
-|   |       ├── containers      # Random Heroes-specific containers
-|   |       └── components      # Hero Details-specific components
-|   └── context                 # Project Context components
+|   ├── components                  # Common components
+|   ├── context                     # Project Context components
+|   ├── features                    # Feature-specific components and containers (eg. pages/modules)
+|   |   ├── RandomHeroes                # Random Heroes view
+|   |   |   ├── containers                  # Random Heroes-specific containers
+|   |   |   └── components                  # Random Heroes-specific components
+|   |   └── HeroDetails                 # Hero Details view
+|   |       ├── containers                  # Random Heroes-specific containers
+|   |       └── components                  # Hero Details-specific components
+|   ├── interfaces                  # Application-wide common interfaces
+|   ├── styles                      # SCSS files that SCSS Modules import
+|   └── utils                       # Commonly used utils (constants, functions etc.)
 ├── README.md
 ├── db.json
 ├── package.json
