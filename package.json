@@ -17,6 +17,7 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
+    "husky": "^7.0.4",
     "json-server": "^0.17.0"
   },
   "scripts": {
@@ -24,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint .",
-    "json-server": "json-server -p 3001 db.json"
+    "json-server": "json-server -p 3001 db.json",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
