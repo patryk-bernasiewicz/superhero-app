@@ -1,18 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import { SuperheroContextProvider } from '@context/SuperheroContext';
+import { Layout } from '@components/Layout/Layout';
+import { GlobalErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
+
+import RandomHeroes from '@features/RandomHeroes/containers/RandomHeroes';
+import HeroDetails from '@features/HeroDetails/containers/HeroDetails';
 
 import 'reseter.css';
 import './index.scss';
-
-import App from './App';
-import { GlobalErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalErrorBoundary>
-      <App />
+      <SuperheroContextProvider>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<RandomHeroes />} />
+              <Route path=":slug" element={<HeroDetails />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </SuperheroContextProvider>
     </GlobalErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
