@@ -21,8 +21,8 @@
 6. Add Error Boundary wrapper ✅
 7. Add paths for easier/more readable imports ✅
 8. Add prettier config to React's builtin Eslint ✅
-9. Add React Context for Superheros
-    - Add basic logic for superhero retrieval from DB
+9. Add React Context for Superheros ✅
+    - Add basic logic for superhero retrieval from DB ✅
 10. Add basic Layout component & wrap rest of the components with it
 11. Add React Router with base routes within Layout
 12. Create RandomHeroes container component
