@@ -13,7 +13,9 @@ interface SuperheroContextProviderProps {
   children: ReactNode;
 }
 
-const SuperheroContext = createContext<SuperheroState>({} as SuperheroState);
+export const SuperheroContext = createContext<SuperheroState>(
+  {} as SuperheroState
+);
 
 export const SuperheroContextProvider = ({
   children,
@@ -21,7 +23,9 @@ export const SuperheroContextProvider = ({
   const [superheroes, setSuperheroes] = useState<Superhero[]>([]);
 
   useEffect(() => {
-    fetchSuperheroes().then((superheroes) => setSuperheroes(superheroes));
+    fetchSuperheroes().then((superheroes) => {
+      setSuperheroes(superheroes);
+    });
   }, []);
 
   return (

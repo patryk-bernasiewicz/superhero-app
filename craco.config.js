@@ -10,15 +10,4 @@ module.exports = {
       '@interfaces': path.resolve(__dirname, 'src/interfaces/'),
     },
   },
-  jest: {
-    configure: {
-      moduleNameMapper: {
-        '^@components(.*)$': '<rootDir>/src/components$1',
-        '^@utils(.*)$': '<rootDir>/src/utils$1',
-        '^@features(.*)$': '<rootDir>/src/features$1',
-        '^@context(.*)$': '<rootDir>/src/context$1',
-        '^@interfaces(.*)$': '<rootDir>/src/interfaces$1',
-      },
-    },
-  },
 };
