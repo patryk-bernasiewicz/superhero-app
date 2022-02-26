@@ -24,7 +24,7 @@
 9. Add React Context for Superheros ✅
     - Add basic logic for superhero retrieval from DB ✅
 10. Add basic Layout component & wrap rest of the components with it ✅
-11. Add React Router with base routes within Layout
+11. Add React Router with base routes within Layout ✅
 12. Create RandomHeroes container component
     - add RandomHeroes component tests
 13. Create HeroDetails container component
@@ -73,12 +73,12 @@ Command that runs automatically after `yarn install`. It prepares Git hooks to r
 |   ├── components                  # Common components
 |   ├── context                     # Project Context components
 |   ├── features                    # Feature-specific components and containers (eg. pages/modules)
-|   |   ├── RandomHeroes                # Random Heroes view
+|   |   ├── HeroDetails                 # Hero Details view
 |   |   |   ├── containers                  # Random Heroes-specific containers
-|   |   |   └── components                  # Random Heroes-specific components
-|   |   └── HeroDetails                 # Hero Details view
+|   |   |   └── components                  # Hero Details-specific components
+|   |   └── RandomHeroes                # Random Heroes view
 |   |       ├── containers                  # Random Heroes-specific containers
-|   |       └── components                  # Hero Details-specific components
+|   |       └── components                  # Random Heroes-specific components
 |   ├── interfaces                  # Application-wide common interfaces
 |   ├── styles                      # SCSS files that SCSS Modules import
 |   └── utils                       # Commonly used utils (constants, functions etc.)

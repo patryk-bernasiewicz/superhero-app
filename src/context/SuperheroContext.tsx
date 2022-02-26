@@ -1,42 +1,17 @@
-import { createContext, ReactNode, useEffect, useState } from 'react';
+import { createContext } from 'react';
 
 import { Superhero } from '@interfaces/superhero.interface';
-import { fetchSuperheroes } from '@utils/api';
 
 interface SuperheroState {
+  areHeroesLoading: boolean;
   superheroes: Superhero[];
-  randomHeroSelection: number[];
+  randomHeroesSelection?: Superhero[];
   superheroDetails?: Superhero;
 }
 
-interface SuperheroContextProviderProps {
-  children: ReactNode;
-}
-
-export const SuperheroContext = createContext<SuperheroState>(
-  {} as SuperheroState
-);
-
-export const SuperheroContextProvider = ({
-  children,
-}: SuperheroContextProviderProps) => {
-  const [superheroes, setSuperheroes] = useState<Superhero[]>([]);
-
-  useEffect(() => {
-    fetchSuperheroes().then((superheroes) => {
-      setSuperheroes(superheroes);
-    });
-  }, []);
-
-  return (
-    <SuperheroContext.Provider
-      value={{
-        superheroes,
-        randomHeroSelection: [],
-        superheroDetails: undefined,
-      }}
-    >
-      {children}
-    </SuperheroContext.Provider>
-  );
-};
+export const SuperheroContext = createContext<SuperheroState>({
+  areHeroesLoading: false,
+  superheroes: [],
+  randomHeroesSelection: undefined,
+  superheroDetails: undefined,
+});

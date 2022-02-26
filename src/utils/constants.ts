@@ -1,0 +1,2 @@
+export const RANDOM_HEROES_REFRESH_TIME = 15000;
+export const RANDOM_HERO_DEFAULT_COUNT = 3;
