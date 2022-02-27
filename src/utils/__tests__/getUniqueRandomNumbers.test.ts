@@ -18,8 +18,6 @@ test('generates an array of unique random numbers', () => {
 
     expect(num).toBeLessThanOrEqual(maxNumber);
 
-    console.log('===== ', num, lastNum);
-
     expect(lastNum).not.toBe(num);
 
     lastNum = num;
