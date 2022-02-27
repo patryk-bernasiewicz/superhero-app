@@ -73,7 +73,8 @@
       "^@utils(.*)$": "<rootDir>/src/utils$1",
       "^@features(.*)$": "<rootDir>/src/features$1",
       "^@context(.*)$": "<rootDir>/src/context$1",
-      "^@interfaces(.*)$": "<rootDir>/src/interfaces$1"
+      "^@interfaces(.*)$": "<rootDir>/src/interfaces$1",
+      "^@svg(.*)$": "<rootDir>/src/svg$1"
     },
     "resetMocks": false
   }

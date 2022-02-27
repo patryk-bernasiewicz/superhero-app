@@ -1,0 +1,33 @@
+@import 'src/styles/colors';
+@import 'src/styles/spacing';
+
+.label {
+  display: inline-flex;
+  position: relative;
+  border-bottom: 2px solid $color-text-light;
+
+  &:focus-within {
+    border-bottom: 2px solid $color-primary;
+  }
+}
+
+.labelText {
+  position: absolute;
+  top: 50%;
+  left: $spacing-2;
+  transform: translateY(-50%);
+
+  .label.hasValue &,
+  .label:focus-within & {
+    visibility: hidden;
+  }
+}
+
+.input {
+  border: 0;
+  padding: $spacing-2;
+
+  &:focus {
+    outline: 1px solid $color-text-light;
+  }
+}

@@ -8,6 +8,7 @@ module.exports = {
       '@features': path.resolve(__dirname, 'src/features/'),
       '@context': path.resolve(__dirname, 'src/context/'),
       '@interfaces': path.resolve(__dirname, 'src/interfaces/'),
+      '@svg': path.resolve(__dirname, 'src/svg/'),
     },
   },
 };

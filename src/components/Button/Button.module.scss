@@ -1,0 +1,42 @@
+@import 'src/styles/colors';
+@import 'src/styles/spacing';
+
+.button {
+  color: $color-background;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing-1 $spacing-3;
+  min-width: 12ch;
+  height: 2rem;
+
+  &.primary {
+    background: $color-primary;
+    border: 2px solid $color-primary;
+
+    &:focus,
+    &:hover {
+      border: 2px solid $color-primary-active;
+    }
+
+    &:focus {
+      outline: 2px solid rgba($color-primary, .7);
+    }
+  }
+
+  &.secondary {
+    background: $color-link;
+    border: 2px solid $color-link;
+
+    &:focus,
+    &:hover {
+      border: 2px solid $color-link-active;
+    }
+
+    &:focus {
+      outline: 2px solid rgba($color-link, .7);
+    }
+  }
+}
