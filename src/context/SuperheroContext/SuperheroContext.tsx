@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 import { Superhero } from '@interfaces/superhero.interface';
 
-interface SuperheroState {
+export interface SuperheroState {
   areHeroesLoading: boolean;
   superheroes: Superhero[];
   randomSuperheroes: Superhero[];

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 
 import { SuperheroContext } from '@context/SuperheroContext/SuperheroContext';
+import { HeroesList } from '../components/HeroesList/HeroesList';
 
 const RandomHeroes = () => {
   const { areHeroesLoading, randomSuperheroes } = useContext(SuperheroContext);
@@ -9,13 +10,7 @@ const RandomHeroes = () => {
     return <div>Loading...</div>;
   }
 
-  return (
-    <ul>
-      {randomSuperheroes.map((superhero) => (
-        <li key={superhero.id}>{superhero.name}</li>
-      ))}
-    </ul>
-  );
+  return <HeroesList heroes={randomSuperheroes} />;
 };
 
 export default RandomHeroes;

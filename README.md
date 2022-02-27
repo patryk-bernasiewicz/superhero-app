@@ -25,7 +25,9 @@
     - Add basic logic for superhero retrieval from DB ✅
 10. Add basic Layout component & wrap rest of the components with it ✅
 11. Add React Router with base routes within Layout ✅
-12. Create RandomHeroes container component
+12. Create RandomHeroes container component ✅
+    - add HeroList component
+    - add HeroSearch component
     - add RandomHeroes component tests
 13. Create HeroDetails container component
     - add HeroDetails component tests
