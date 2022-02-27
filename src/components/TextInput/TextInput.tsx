@@ -1,4 +1,4 @@
-import React, { HTMLProps, useEffect, useRef, useState } from 'react';
+import React, { HTMLProps } from 'react';
 import cx from 'classnames';
 
 import styles from './TextInput.module.scss';
@@ -8,34 +8,20 @@ interface TextInputProps extends HTMLProps<HTMLInputElement> {
 }
 
 export const TextInput = ({ label, ...inputProps }: TextInputProps) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [hasValue, setHasValue] = useState<boolean>(
-    Boolean((inputRef.current as HTMLInputElement)?.value)
-  );
+  const { value } = inputProps;
 
-  // handle hasValue for uncontrolled inputs
-  useEffect(() => {
-    if (inputProps.value || !inputRef.current) {
-      return;
-    }
-    const inputElement = inputRef.current as HTMLInputElement;
-
-    const inputHandler = ({ target }: Event) => {
-      const { value } = target as HTMLInputElement;
-      setHasValue(Boolean(value.toString().length));
-    };
-
-    inputElement.addEventListener('input', inputHandler);
-  }, [inputProps.value]);
+  if (typeof value === 'undefined') {
+    throw new Error('Cannot use TextInput as an uncontrolled input!');
+  }
 
   return (
     <label
       className={cx(styles.label, {
-        [styles.hasValue]: hasValue,
+        [styles.hasValue]: value.toString().length,
       })}
     >
       <span className={styles.labelText}>{label}</span>
-      <input ref={inputRef} className={styles.input} {...inputProps} />
+      <input className={styles.input} {...inputProps} />
     </label>
   );
 };
