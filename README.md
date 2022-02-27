@@ -3,6 +3,7 @@
 ## List of contents
 
 - [Steps to push forward](#steps-to-push-forward)
+- [Project notes](#project-notes)
 - [Scripts](#scripts)
 - [Folder structure](#folder-structure)
 - [Run production build in Docker container](#run-production-build-in-docker-container)
@@ -26,13 +27,43 @@
 10. Add basic Layout component & wrap rest of the components with it ✅
 11. Add React Router with base routes within Layout ✅
 12. Create RandomHeroes container component ✅
-    - add HeroList component
-    - add HeroSearch component
-    - add RandomHeroes component tests
+    - add HeroList component ✅
+    - add RandomHeroes component tests ✅
+        - add Button component
+        - add TextInput component
+        - put them together to create HeroSearch component
+        - add Hero serach logic
 13. Create HeroDetails container component
     - add HeroDetails component tests
 14. Setup Cypress
     - Add E2E tests to Superhero App
+
+## Project notes
+
+### Tech stack
+
+- React 17
+- Typescript
+- Sass (with SCSS Modules)
+- React's built-in Eslint with Prettier plugin
+- Craco (replaces react-scripts, used for path aliases)
+- Husky
+- React Testing Library
+- json-server for data serving
+
+### Q&A
+
+#### Why is all heroes data loaded at once?
+
+`json-server` doesn't allow to fetch 3 random items from it's database, so I had to settle with serving those from memory.
+
+In order to provide such feature, I'd have to modify the `json-server` default behavior to the point that it would become a separate Express.js project - so I decided to go with the simpler solution.
+
+#### Why React Context instead of an external state management solution?
+
+In a real project I'd probably go with Redux Toolkit or other library (I'd probably use Zustand out of curiosity), but knowing that the requirements won't change in time, I decided to go with native React's Context to serve my data and custom hooks to handle side-effects.
+
+#### 
 
 ## Scripts
 
@@ -43,8 +74,10 @@ Starts app in development mode.
 ❗ Important - you will need an `.env` file created in the root dir of your project. Fill it with following contents:
 
 ```
-BACKEND_URL=http://localhost:3001
+REACT_APP_BACKEND_URL=http://localhost:3001
 ```
+
+See `.env.example` if you're still not sure what to do. 😅
 
 You also need to have `json-server` running: `yarn json-server`
 
@@ -76,13 +109,14 @@ Command that runs automatically after `yarn install`. It prepares Git hooks to r
 |   ├── context                     # Project Context components
 |   ├── features                    # Feature-specific components and containers (eg. pages/modules)
 |   |   ├── HeroDetails                 # Hero Details view
-|   |   |   ├── containers                  # Random Heroes-specific containers
+|   |   |   ├── containers                  # Hero Details-specific containers
 |   |   |   └── components                  # Hero Details-specific components
-|   |   └── RandomHeroes                # Random Heroes view
-|   |       ├── containers                  # Random Heroes-specific containers
-|   |       └── components                  # Random Heroes-specific components
+|   |   └── HeroesSearch                # Heroes Search view
+|   |       ├── containers                  # Heroes Search-specific containers
+|   |       └── components                  # Heroes Search-specific components
 |   ├── interfaces                  # Application-wide common interfaces
 |   ├── styles                      # SCSS files that SCSS Modules import
+|   ├── svg                         # SVG files (icons, loaders etc.)
 |   └── utils                       # Commonly used utils (constants, functions etc.)
 ├── README.md
 ├── db.json

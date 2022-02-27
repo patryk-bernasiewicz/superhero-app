@@ -6,7 +6,7 @@ import { SuperheroContextProvider } from '@context/SuperheroContext/SuperheroCon
 import { Layout } from '@components/Layout/Layout';
 import { GlobalErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
 
-import RandomHeroes from '@features/RandomHeroes/containers/RandomHeroes';
+import HeroesSearch from '@features/HeroesSearch/containers/HeroesSearch';
 import HeroDetails from '@features/HeroDetails/containers/HeroDetails';
 
 import 'reseter.css';
@@ -21,7 +21,7 @@ ReactDOM.render(
         <BrowserRouter>
           <Layout>
             <Routes>
-              <Route path="/" element={<RandomHeroes />} />
+              <Route path="/" element={<HeroesSearch />} />
               <Route path=":slug" element={<HeroDetails />} />
             </Routes>
           </Layout>

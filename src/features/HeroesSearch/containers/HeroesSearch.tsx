@@ -1,12 +1,11 @@
 import { useContext } from 'react';
 
 import { SuperheroContext } from '@context/SuperheroContext/SuperheroContext';
-import { HeroesList } from '../components/HeroesList/HeroesList';
-
-import { ReactComponent as RippleLoader } from '../../../svg/ripple.svg';
+import { HeroesList } from '@features/HeroesSearch/components/HeroesList/HeroesList';
+import { ReactComponent as RippleLoader } from '@svg/ripple.svg';
 import { jestIdsMap } from '@utils/jestHelpers';
 
-const RandomHeroes = () => {
+const HeroesSearch = () => {
   const { areHeroesLoading, randomSuperheroes } = useContext(SuperheroContext);
 
   if (areHeroesLoading) {
@@ -16,4 +15,4 @@ const RandomHeroes = () => {
   return <HeroesList heroes={randomSuperheroes} />;
 };
 
-export default RandomHeroes;
+export default HeroesSearch;

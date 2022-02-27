@@ -26,20 +26,24 @@ export const getUniqueRandomNumbers = (
   }
 
   const validateIsUnique = (num: number, generatedNums: number[]): boolean => {
-    if (
-      !forceUnique ||
-      (!validControlArrayValues.length && !generatedNums.length)
-    ) {
-      return true;
-    }
-
-    if (validControlArrayValues.length) {
+    // if forceUnique, only allow numbers unique to control array numbers
+    // and numbers generated so far
+    if (forceUnique) {
       return (
         !validControlArrayValues.includes(num) && !generatedNums.includes(num)
       );
     }
 
-    return true;
+    // check if there are possible unique numbers to generate
+    const remainingPossibleNums =
+      maxNum - generatedNums.length - validControlArrayValues.length;
+    if (remainingPossibleNums === 0) {
+      return true;
+    }
+
+    // if there are no possible remaining numbers to generate,
+    // allow number existing in control array but not in numbers generated so far
+    return !generatedNums.includes(num);
   };
 
   const generatedNums: number[] = [];
