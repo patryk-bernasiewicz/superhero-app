@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 export const useSuperheroes = () => {
   const [error, setError] = useState<Error>();
-  const [areHeroesLoading, setHeroesLoading] = useState<boolean>(false);
+  const [areHeroesLoading, setHeroesLoading] = useState<boolean>(true);
   const [superheroes, setSuperheroes] = useState<Superhero[]>([]);
 
   useEffect(() => {

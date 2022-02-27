@@ -15,6 +15,7 @@ export const SuperheroContextProvider = ({
   const { areHeroesLoading, error, superheroes } = useSuperheroes();
   const randomSuperheroes = useRandomHeroes(superheroes);
   const [searchResults, setSearchResults] = useState<Superhero[] | undefined>();
+  const [heroDetails, setHeroDetail] = useState<Superhero>();
 
   useEffect(() => {
     if (error) {
@@ -41,12 +42,25 @@ export const SuperheroContextProvider = ({
     setSearchResults(filteredSuperheroes);
   };
 
+  const findHeroDetails = (slug: string) => {
+    if (!superheroes.length) {
+      return;
+    }
+
+    const superhero = superheroes.find(
+      (superhero) => superhero.slug.toLowerCase() === slug.toLowerCase()
+    );
+    setHeroDetail(superhero);
+  };
+
   return (
     <SuperheroContext.Provider
       value={{
         areHeroesLoading,
         displayedSuperheroes,
         handleHeroSearch,
+        findHeroDetails,
+        heroDetails,
       }}
     >
       {children}

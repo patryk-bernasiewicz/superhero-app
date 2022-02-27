@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
 import {
+  initialState,
   SuperheroContext,
   SuperheroState,
 } from '@context/SuperheroContext/SuperheroContext';
@@ -25,9 +26,7 @@ export const renderWithContext = (
   render(
     <SuperheroContext.Provider
       value={{
-        areHeroesLoading: true,
-        displayedSuperheroes: [],
-        handleHeroSearch: () => null,
+        ...initialState,
         ...(modifiedContextValue || {}),
       }}
     >

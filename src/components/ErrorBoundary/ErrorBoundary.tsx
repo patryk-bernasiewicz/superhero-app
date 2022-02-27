@@ -2,6 +2,7 @@ import { Component, ReactNode } from 'react';
 import { jestIdsMap } from '@utils/jestHelpers';
 
 import styles from './ErrorBoundary.module.scss';
+import { Message } from '@components/Message/Message';
 
 interface GlobalErrorBoundaryState {
   hasError: boolean;
@@ -38,21 +39,16 @@ export class GlobalErrorBoundary extends Component<
 
     if (hasError) {
       return (
-        <div className={styles.wrapper} data-testid={jestIdsMap.errorBoundary}>
-          <div className={styles.boundary}>
-            <div className={styles.heading}>Oh no!</div>
-            <p>
-              An error happened somewhere in the app... Please let us know by
-              email!
-            </p>
-            {errorMessage && (
-              <div className={styles.details}>
-                Error Details:
-                <p className={styles.errorMessage}>{errorMessage}</p>
-              </div>
-            )}
+        <Message
+          heading="Oh no!"
+          text="An error happened somewhere in the app... Please let us know by email!"
+          data-testid={jestIdsMap.errorBoundary}
+        >
+          <div className={styles.details}>
+            Error Details:
+            <p className={styles.errorMessage}>{errorMessage}</p>
           </div>
-        </div>
+        </Message>
       );
     }
 

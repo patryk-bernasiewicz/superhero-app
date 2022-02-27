@@ -5,6 +5,7 @@ export interface Superhero {
   name: string;
   slug: string;
   powerstats: {
+    [k: string]: number;
     intelligence: number;
     strength: number;
     speed: number;
