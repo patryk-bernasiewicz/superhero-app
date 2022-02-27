@@ -9,7 +9,10 @@ import {
 
 export const jestIdsMap = {
   errorBoundary: 'error-boundary',
+  loader: 'loader',
+  randomHeroesList: 'random-heroes-list',
   randomHeroItem: 'random-hero-item',
+  randomHeroLink: 'random-hero-link',
 };
 
 export const renderWithContext = (

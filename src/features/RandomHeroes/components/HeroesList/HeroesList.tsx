@@ -11,11 +11,15 @@ interface HeroesListProps {
 }
 
 export const HeroesList = ({ heroes }: HeroesListProps) => (
-  <ul className={styles.list}>
+  <ul className={styles.list} data-testid={jestIdsMap.randomHeroesList}>
     {heroes.map(
       ({ id, name, slug, biography: { fullName, alignment, publisher } }) => (
         <li key={id} data-testid={jestIdsMap.randomHeroItem}>
-          <Link to={`/${slug}`} className={styles.item}>
+          <Link
+            to={`/${slug}`}
+            className={styles.item}
+            data-testid={jestIdsMap.randomHeroLink}
+          >
             <div className={styles.name}>{name}</div>
             <div className={styles.hidden}>
               <span className={styles.fullName}>{fullName}</span>

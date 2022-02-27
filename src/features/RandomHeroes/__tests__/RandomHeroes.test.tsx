@@ -4,9 +4,9 @@ import { screen, within } from '@testing-library/react';
 import RandomHeroes from '@features/RandomHeroes/containers/RandomHeroes';
 import { jestIdsMap, renderWithContext } from '@utils/jestHelpers';
 
-test('renders "loading..." when `areHeroesLoading` is true', () => {
+test('renders Loader when `areHeroesLoading` is true', () => {
   renderWithContext(<RandomHeroes />);
-  screen.getByText(/Loading.../i);
+  screen.getByTestId(jestIdsMap.loader);
 });
 
 test('renders HeroesList when `areHeroesLoading` is false and data exists', () => {

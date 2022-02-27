@@ -1,9 +1,8 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect } from 'react';
 
-import { Superhero } from '@interfaces/superhero.interface';
-import { fetchSuperheroes } from '@utils/api';
 import { SuperheroContext } from './SuperheroContext';
 import { useRandomHeroes } from '@utils/hooks/useRandomHeroes';
+import { useSuperheroes } from '@utils/hooks/useSuperheroes';
 
 interface SuperheroContextProviderProps {
   children: ReactNode;
@@ -12,25 +11,14 @@ interface SuperheroContextProviderProps {
 export const SuperheroContextProvider = ({
   children,
 }: SuperheroContextProviderProps) => {
-  const [areHeroesLoading, setHeroesLoading] = useState<boolean>(false);
-  const [superheroes, setSuperheroes] = useState<Superhero[]>([]);
+  const { areHeroesLoading, error, superheroes } = useSuperheroes();
   const randomSuperheroes = useRandomHeroes(superheroes);
 
   useEffect(() => {
-    setHeroesLoading(true);
-    fetchSuperheroes().then((superheroes) => {
-      setSuperheroes(superheroes);
-      setHeroesLoading(false);
-    });
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    if (areHeroesLoading || !superheroes.length) {
-      return;
+    if (error) {
+      throw error;
     }
-  }, [areHeroesLoading, superheroes.length]);
+  }, [error]);
 
   return (
     <SuperheroContext.Provider

@@ -10,6 +10,7 @@ export const useRandomHeroes = (superheroes: Superhero[]) => {
   const refreshTimer = useRef<ReturnType<typeof setInterval>>();
   const [randomIndexes, setRandomIndexes] = useState<number[]>();
 
+  // TODO: replace with API call when backend is ready
   const randomHeroes = useMemo<Superhero[]>(() => {
     return superheroes && randomIndexes
       ? randomIndexes.map((index) => superheroes[index])
