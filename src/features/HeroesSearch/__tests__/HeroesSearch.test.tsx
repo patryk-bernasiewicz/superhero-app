@@ -2,6 +2,7 @@ import React from 'react';
 import { screen, within } from '@testing-library/react';
 
 import { jestIdsMap, renderWithContext } from '@utils/jestHelpers';
+import { Superhero } from '@interfaces/superhero.interface';
 
 import RandomHeroes from '../containers/HeroesSearch';
 
@@ -29,10 +30,10 @@ test('renders HeroesList when `areHeroesLoading` is false and data exists', () =
     {},
     {
       areHeroesLoading: false,
-      randomSuperheroes: mockedSupeheroes as any,
+      displayedSuperheroes: mockedSupeheroes as Superhero[],
     }
   );
 
-  const heroItems = screen.getByTestId(jestIdsMap.randomHeroItem);
+  const heroItems = screen.getByTestId(jestIdsMap.heroesList.item);
   expect(within(heroItems).getByText(mockedSupeheroes[0].name)).toBeVisible();
 });

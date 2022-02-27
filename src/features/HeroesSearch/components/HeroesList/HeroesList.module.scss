@@ -69,3 +69,10 @@
   font-size: 0.9em;
   font-weight: 600;
 }
+
+
+.notFoundMessage {
+  color: $color-alert;
+  margin: $spacing-2 $spacing-0;
+  font-size: 1.1em;
+}

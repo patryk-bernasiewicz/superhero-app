@@ -4,14 +4,11 @@ import { Superhero } from '@interfaces/superhero.interface';
 
 export interface SuperheroState {
   areHeroesLoading: boolean;
-  superheroes: Superhero[];
-  randomSuperheroes: Superhero[];
   superheroDetails?: Superhero;
+  handleHeroSearch: (text: string) => void;
+  displayedSuperheroes?: Superhero[];
 }
 
-export const SuperheroContext = createContext<SuperheroState>({
-  areHeroesLoading: false,
-  superheroes: [],
-  randomSuperheroes: [],
-  superheroDetails: undefined,
-});
+export const SuperheroContext = createContext<SuperheroState>(
+  {} as SuperheroState
+);

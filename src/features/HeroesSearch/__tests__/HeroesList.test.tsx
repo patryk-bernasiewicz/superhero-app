@@ -7,12 +7,12 @@ import { RecursivePartial } from '@interfaces/recursivePartialType';
 
 import { HeroesList } from '../components/HeroesList/HeroesList';
 
-test('Displays empty list when no `heroes` are provided', async () => {
+test('Displays "No heroes to display" message when no `heroes` are provided', async () => {
   render(<HeroesList heroes={[]} />);
 
-  screen.getByTestId(jestIdsMap.randomHeroesList);
+  screen.getByText(/No heroes to display/i);
   expect(
-    screen.queryByTestId(jestIdsMap.randomHeroItem)
+    screen.queryByTestId(jestIdsMap.heroesList.list)
   ).not.toBeInTheDocument();
 });
 
@@ -65,7 +65,7 @@ const renderWithRoute = (heroes: Superhero[]) => {
 test('Displays valid data', () => {
   renderWithRoute(mockedHeroes as Superhero[]);
 
-  const items = screen.getAllByTestId(jestIdsMap.randomHeroItem);
+  const items = screen.getAllByTestId(jestIdsMap.heroesList.item);
   expect(items.length).toBe(mockedHeroes.length);
 
   items.forEach((item, index) => {
@@ -81,7 +81,7 @@ test('Displays valid data', () => {
 test('navigates to details page on Link click', async () => {
   renderWithRoute(mockedHeroes as Superhero[]);
 
-  const link = screen.getAllByTestId(jestIdsMap.randomHeroLink);
+  const link = screen.getAllByTestId(jestIdsMap.heroesList.link);
   fireEvent.click(link[0]);
   screen.getByTestId(detailsViewId);
 });

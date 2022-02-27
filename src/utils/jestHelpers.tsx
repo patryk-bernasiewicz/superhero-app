@@ -10,9 +10,11 @@ import {
 export const jestIdsMap = {
   errorBoundary: 'error-boundary',
   loader: 'loader',
-  randomHeroesList: 'random-heroes-list',
-  randomHeroItem: 'random-hero-item',
-  randomHeroLink: 'random-hero-link',
+  heroesList: {
+    list: 'heroes-list',
+    item: 'hero-item',
+    link: 'hero-link',
+  },
 };
 
 export const renderWithContext = (
@@ -24,9 +26,8 @@ export const renderWithContext = (
     <SuperheroContext.Provider
       value={{
         areHeroesLoading: true,
-        superheroes: [],
-        randomSuperheroes: [],
-        superheroDetails: undefined,
+        displayedSuperheroes: [],
+        handleHeroSearch: () => null,
         ...(modifiedContextValue || {}),
       }}
     >
