@@ -29,10 +29,10 @@
 12. Create RandomHeroes container component ✅
     - add HeroList component ✅
     - add RandomHeroes component tests ✅
-        - add Button component
-        - add TextInput component
-        - put them together to create HeroSearch component
-        - add Hero serach logic
+        - add Button component ✅
+        - add TextInput component ✅
+        - put them together to create SearchForm component ✅
+        - add Hero serach logic ✅
 13. Create HeroDetails container component
     - add HeroDetails component tests
 14. Setup Cypress
