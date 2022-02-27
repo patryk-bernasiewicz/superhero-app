@@ -1,13 +1,18 @@
-import { SuperheroContext } from '@context/SuperheroContext';
 import { useContext } from 'react';
 
+import { SuperheroContext } from '@context/SuperheroContext/SuperheroContext';
+
 const RandomHeroes = () => {
-  const { randomHeroesSelection } = useContext(SuperheroContext);
+  const { areHeroesLoading, randomSuperheroes } = useContext(SuperheroContext);
+
+  if (areHeroesLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <ul>
-      {randomHeroesSelection?.map((hero) => (
-        <li key={hero.id}>{hero.name}</li>
+      {randomSuperheroes.map((superhero) => (
+        <li key={superhero.id}>{superhero.name}</li>
       ))}
     </ul>
   );

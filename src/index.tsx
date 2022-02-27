@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { SuperheroContextProvider } from '@context/SuperherContextProvider';
+import { SuperheroContextProvider } from '@context/SuperheroContext/SuperheroContextProvider';
 import { Layout } from '@components/Layout/Layout';
 import { GlobalErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
 
