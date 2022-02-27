@@ -32,7 +32,7 @@ test('ignores controlArray values if they are larger than maximum possible numbe
   expect(result.length).toBe(wantedLength);
 });
 
-test.only('genreates non-unique numbers if forceUnique flag is "true"', () => {
+test('generates non-unique numbers if forceUnique flag is "true"', () => {
   const wantedLength = 3;
   const maxNumber = 3;
   const controlArray = [1, 2, 3];

@@ -1,8 +1,9 @@
 import React from 'react';
 import { screen, within } from '@testing-library/react';
 
-import RandomHeroes from '@features/RandomHeroes/containers/RandomHeroes';
 import { jestIdsMap, renderWithContext } from '@utils/jestHelpers';
+
+import RandomHeroes from '../containers/HeroesSearch';
 
 test('renders Loader when `areHeroesLoading` is true', () => {
   renderWithContext(<RandomHeroes />);
