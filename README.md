@@ -33,8 +33,9 @@
         - add TextInput component ✅
         - put them together to create SearchForm component ✅
         - add Hero serach logic ✅
-13. Create HeroDetails container component
-    - add HeroDetails component tests
+13. Create HeroDetails container component ✅
+    - add HeroDetails component tests ✅
+14. Big refactor with structure, component names, context simplicity ✅
 14. Setup Cypress
     - Add E2E tests to Superhero App
 
@@ -106,14 +107,15 @@ Command that runs automatically after `yarn install`. It prepares Git hooks to r
 ├── public                      # React public files
 ├── src
 |   ├── components                  # Common components
-|   ├── context                     # Project Context components
+|   ├── context
+|   |   └── AppContext.tsx          # Global App context
 |   ├── features                    # Feature-specific components and containers (eg. pages/modules)
-|   |   ├── HeroDetails                 # Hero Details view
-|   |   |   ├── containers                  # Hero Details-specific containers
-|   |   |   └── components                  # Hero Details-specific components
-|   |   └── HeroesSearch                # Heroes Search view
-|   |       ├── containers                  # Heroes Search-specific containers
-|   |       └── components                  # Heroes Search-specific components
+|   |   ├── Details                     # Hero Details view
+|   |   |   ├── containers
+|   |   |   └── components
+|   |   └── HeroBrowser                 # Heroes Browser (main view)
+|   |       ├── containers
+|   |       └── components
 |   ├── interfaces                  # Application-wide common interfaces
 |   ├── styles                      # SCSS files that SCSS Modules import
 |   ├── svg                         # SVG files (icons, loaders etc.)
@@ -126,9 +128,9 @@ Command that runs automatically after `yarn install`. It prepares Git hooks to r
 └── Dockerfile
 ```
 
-Tests are kept in dedicated `__tests__` directory under every innermost branch of the folder structure.
+Tests are kept next to the file they're related to.
 
-**Containers** are special type of components that are allowed to trigger logic changes (typically function calls from the app's Context)
+**Containers** are special type of components that are allowed to access global state (from `AppContext`). Feature-specific components are made in a way that they are as stupid as possible (not drawing directly from any context or invoking side-effects).
 
 ## Run production build in Docker container
 

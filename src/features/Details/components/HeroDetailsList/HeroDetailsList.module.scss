@@ -1,0 +1,47 @@
+@import '/src/styles/colors';
+@import '/src/styles/spacing';
+@import '/src/styles/mq';
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: $spacing-0;
+  padding: $spacing-0;
+  width: 100%;
+}
+
+.item {
+  padding: $spacing-1 $spacing-5 $spacing-1 $spacing-0;
+  width: clamp(22ch, 50%, 100%);
+  flex-grow: 1;
+}
+
+.statName {
+  display: block;
+  color: $color-text-light;
+  font-size: 0.75em;
+  font-weight: 600;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.statValue {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: $spacing-2;
+  overflow: hidden;
+  width: 100%;
+}
+
+.valueList {
+  > li {
+    &::before {
+      font-size: 0.8em;
+      content: '•';
+      display: inline-block;
+      margin-right: $spacing-1;
+    }
+  }
+}

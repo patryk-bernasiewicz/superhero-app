@@ -1,0 +1,32 @@
+@import '/src/styles/spacing';
+@import '/src/styles/mq';
+
+$xs-header-width: 100%;
+$sm-header-width: clamp(160px, 20vw, 240px);
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include mq(480px) {
+    flex-direction: row;
+  }
+}
+
+.header {
+  width: $xs-header-width;
+
+  @include mq(480px) {
+    width: $sm-header-width;
+    padding-right: $spacing-3;
+  }
+}
+
+.contents {
+  width: 100%;
+
+  @include mq(480px) {
+    width: calc(100% - #{$sm-header-width});
+  }
+}

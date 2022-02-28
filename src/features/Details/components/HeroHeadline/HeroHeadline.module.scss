@@ -1,0 +1,27 @@
+@import '/src/styles/colors';
+@import '/src/styles/spacing';
+
+.headline {
+  display: flex;
+  align-items: center;
+}
+
+.heroName {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.alignment {
+  display: inline-block;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-left: $spacing-2;
+
+  &.good {
+    color: $color-success;
+  }
+
+  &.bad {
+    color: $color-alert;
+  }
+}

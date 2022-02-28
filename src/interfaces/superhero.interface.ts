@@ -22,6 +22,7 @@ export interface Superhero {
     hairColor: string;
   };
   biography: {
+    [k: string]: string | string[];
     fullName: string;
     alterEgos: string;
     aliases: string[];

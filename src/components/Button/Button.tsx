@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './Button.module.scss';
 
-interface ButtonProps extends HTMLProps<HTMLButtonElement> {
+export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   kind?: 'primary' | 'secondary';
   type?: 'button' | 'submit' | 'reset';
 }

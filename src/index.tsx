@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { SuperheroContextProvider } from '@context/SuperheroContext/SuperheroContextProvider';
+import { AppContextProvider } from '@context/AppContext';
 import { Layout } from '@components/Layout/Layout';
 import { GlobalErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
 
-import HeroesSearch from '@features/HeroesSearch/containers/HeroesSearch';
-import HeroDetails from '@features/HeroDetails/containers/HeroDetails';
+import HeroesBrowser from '@features/HeroesBrowser/containers/HeroesBrowser';
+import HeroDetails from '@features/Details/containers/HeroDetails';
 
 import 'reseter.css';
 import './index.scss';
@@ -17,16 +17,18 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <GlobalErrorBoundary>
-      <SuperheroContextProvider>
+      <AppContextProvider>
         <BrowserRouter>
           <Layout>
             <Routes>
-              <Route path="/" element={<HeroesSearch />} />
-              <Route path=":slug" element={<HeroDetails />} />
+              <Route path="/">
+                <Route index element={<HeroesBrowser />} />
+                <Route path=":slug" element={<HeroDetails />} />
+              </Route>
             </Routes>
           </Layout>
         </BrowserRouter>
-      </SuperheroContextProvider>
+      </AppContextProvider>
     </GlobalErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
