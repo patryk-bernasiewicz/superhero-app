@@ -132,7 +132,25 @@ Tests are kept next to the file they're related to.
 
 **Containers** are special type of components that are allowed to access global state (from `AppContext`). Feature-specific components are made in a way that they are as stupid as possible (not drawing directly from any context or invoking side-effects).
 
-## Run production build in Docker container
+## Run in Docker container
+
+### Development mode
+
+Build the app image:
+
+```
+docker-compose -f docker-compose.dev.yml build
+```
+
+Spin it up:
+
+```
+docker-compose -f docker-compose.dev.yml up
+```
+
+After those commands are done, you can access the app on `http://localhost:3000`, and any changes you make to the code will be automatically reflected in your browser!
+
+### Production build
 
 Build the app image:
 

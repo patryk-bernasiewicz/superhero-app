@@ -4,6 +4,7 @@ import { Superhero } from '@interfaces/superhero.interface';
 import { fetchSuperheroes } from '@utils/api';
 import { useDebouncedSearch } from '@utils/hooks/useDebouncedSearch';
 import { useRandomItems } from '@utils/hooks/useRandomItems';
+import { useAsyncError } from '@utils/useAsyncError';
 
 export interface AppState {
   areHeroesFetched: boolean;
@@ -28,6 +29,7 @@ export const initialState: AppState = {
 export const AppContext = createContext<AppState>(initialState);
 
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
+  const throwError = useAsyncError();
   const [areHeroesFetched, setHeroesFetched] = useState(false);
 
   const [superheroes, setSuperheroes] = useState<Superhero[] | undefined>();
@@ -51,11 +53,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         setSuperheroes(superheroes);
         setHeroesFetched(true);
       })
-      .catch(() => {
-        throw new Error(
-          'Could not connect to the database. Please try again later. (did you remember to run `yarn json-server`?)'
-        );
-      });
+      .catch((error) => throwError(error));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
