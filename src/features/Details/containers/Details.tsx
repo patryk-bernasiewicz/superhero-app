@@ -14,10 +14,11 @@ import { Work } from '@features/Details/components/Work/Work';
 import { Connections } from '@features/Details/components/Connections/Connections';
 import { Image } from '@features/Details/components/Image/Image';
 
-import styles from './HeroDetails.module.scss';
 import { Button } from '@components/Button/Button';
 import { withContext } from '@components/withContext/WithContext';
 import { DetailsContext, DetailsProvider } from '../context/DetailsContext';
+
+import styles from './Details.module.scss';
 
 export const Details = () => {
   const { slug } = useParams();

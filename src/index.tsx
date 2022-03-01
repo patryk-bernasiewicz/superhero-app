@@ -7,7 +7,7 @@ import { Layout } from '@components/Layout/Layout';
 import { GlobalErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
 
 import HeroesBrowser from '@features/HeroesBrowser/containers/HeroesBrowser';
-import HeroDetails from '@features/Details/containers/HeroDetails';
+import Details from '@features/Details/containers/Details';
 
 import 'reseter.css';
 import './index.scss';
@@ -23,7 +23,7 @@ ReactDOM.render(
             <Routes>
               <Route path="/">
                 <Route index element={<HeroesBrowser />} />
-                <Route path=":slug" element={<HeroDetails />} />
+                <Route path=":slug" element={<Details />} />
               </Route>
             </Routes>
           </Layout>
