@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  json_server:
+    image: vimagick/json-server
+    command: -H 0.0.0.0 -p 3001 -w /db.json
+    ports:
+      - 3001:3001
+    volumes:
+      - ./db.json:/db.json
+    restart: always
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    depends_on:
+      - json_server
+    ports:
+      - 80:80
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:3001 # in real production this would be set in CD

@@ -1,0 +1,6 @@
+export const RANDOM_HEROES_REFRESH_TIME = 15000;
+export const RANDOM_HERO_DEFAULT_COUNT = 3;
+
+export const SEARCH_DEBOUNCE_TIME = 400;
+
+export const MININUM_SEARCH_CHARACTERS = 2;

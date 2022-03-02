@@ -1,0 +1,11 @@
+@import 'src/styles/colors';
+@import 'src/styles/spacing';
+
+.details {
+  margin: $spacing-3 0;
+}
+
+.errorMessage {
+  color: $color-alert;
+  margin: $spacing-1 0;
+}

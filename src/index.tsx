@@ -1,12 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import { AppContextProvider } from '@context/AppContext';
+import { Layout } from '@components/Layout/Layout';
+import { GlobalErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
+
+import HeroesBrowser from '@features/HeroesBrowser/containers/HeroesBrowser';
+import Details from '@features/Details/containers/Details';
+
+import 'reseter.css';
+import './index.scss';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalErrorBoundary>
+      <AppContextProvider>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/">
+                <Route index element={<HeroesBrowser />} />
+                <Route path=":slug" element={<Details />} />
+              </Route>
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </AppContextProvider>
+    </GlobalErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
 );
