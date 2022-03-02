@@ -72,7 +72,9 @@ In a real project I'd probably go with Redux Toolkit or other library (I'd proba
 
 Starts app in development mode.
 
-❗ Important - you will need an `.env` file created in the root dir of your project. Fill it with following contents:
+❗ Important - you will need an `.env` file created in the root dir of your project (does not apply if you're using [docker-compose](#run-in-docker-container))
+
+Fill it with following contents:
 
 ```
 REACT_APP_BACKEND_URL=http://localhost:3001
@@ -147,6 +149,8 @@ Spin it up:
 ```
 docker-compose -f docker-compose.dev.yml up
 ```
+
+You'll still need to install local dependencies (`yarn install`) to utilize Typescript & Eslint in your code.
 
 After those commands are done, you can access the app on `http://localhost:3000`, and any changes you make to the code will be automatically reflected in your browser!
 
